@@ -1,0 +1,84 @@
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'about'
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'About Aurinko';
+    - var colorlight = true;
+    - var aurinko = true;
+    
+    link(rel="apple-touch-icon" sizes="76x76" href=".././images/favicon/aurinko/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href=".././images/favicon/aurinko/ofavicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href=".././images/favicon/aurinko/favicon-16x16.png")
+    link(rel="manifest" href=".././images/favicon/aurinko/site.webmanifest")
+    link(rel="mask-icon" href=".././images/favicon/aurinko/safari-pinned-tab.svg" color="#5bbad5")
+    meta(name="msapplication-TileColor" content="#ffffff")
+    meta(name="theme-color" content="#ffffff")
+    title About Aurinko API
+    meta(name="description" content="The Aurinko API is a unified mailbox API platform made for developers, by developers.")
+//- Выводим content
+block content
+    include section/ui-kit/link.pug
+    include section/ui-kit/title.pug
+    include section/ui-kit/values.pug
+
+    +b.about-us
+        +e('div').description
+            .b-container
+                +title('h2', '').--h2.--about-us-big Aurinko is a unified mailbox API platform made for developers, by&nbsp;developers, streamlining integrations with mailbox providers and services like Google, Office 365, Outlook.com, MS&nbsp;Exchange
+                +e('div').text The Aurinko API empowers developers to&nbsp;build innovative software quickly, easily and cost effectively. We&nbsp;deliver tools and services that allow businesses to&nbsp;focus on&nbsp;their core skills, instead of&nbsp;wasting months trying to&nbsp;reinvent the wheel. Our mission is&nbsp;to&nbsp;help companies become masters of&nbsp;their craft. We&nbsp;enable developers to&nbsp;build apps that integrate with email, calendar and contacts providers that their customers love.
+                +e('img').cache-bottom(src='/images/inhtml/curved-bottom-cache-bottom.svg', alt)
+
+    .b-container
+        +values({
+            title: 'Our values',
+        'items': [{
+                    'src': '/images/inhtml/values/objective.svg',
+                    'title': 'Focus on impact',
+                    'text': 'We know our growth is dependent on increasing the value we deliver to customers. We focus our energy on improvements that will make a real difference, with a desired outcome made clear up-front.'
+                },
+                {
+                    'src': '/images/inhtml/values/binoculars.svg',
+                    'title': 'Pay attention to detail',
+                    'text': 'We believe the quality of everything we do is a competitive advantage. We expect high attention-to-detail, whether its in how we write an email, review our analytics, or write our code.'
+                },
+                {
+                    'src': '/images/inhtml/values/idea.svg',
+                    'title': 'Always look to improve',
+                    'text': 'We survive and grow by constantly looking for opportunities to improve our solutions, our processes and ourselves. We own our mistakes, using them as an opportunity to learn what changes we should make to processes and tools.'
+                },
+                {
+                    'src': '/images/inhtml/values/road.svg',
+                    'title': 'Enjoy the journey',
+                    'text': 'While grit and curiosity drive us to achieve the best solution to every challenge, we also bring a positive outlook to everything we do. We don’t pin our happiness on the attainment of a particular end goal - we delight in every step along the way.'
+                },
+                {
+                    'src': '/images/inhtml/values/hand.svg',
+                    'title': 'Care more',
+                    'text': 'We foster a culture of empathy and transparency to ensure that we’re always adding value and putting the needs of our customers first.'
+                },
+                {
+                    'src': '/images/inhtml/values/talk.svg',
+                    'title': 'Team over self',
+                    'text': 'Empowering teams is key to our success. We check their egos at the door to help others achieve team goals and mutual success.'
+                }
+            ]
+        }).--about
+
+    +b.command
+        .b-container
+            +e.wrapper
+                +title('h2', 'Join our team&nbsp;&mdash; we&nbsp;are hiring!').--h2.--command
+                +e.text-wrapper.--icon
+                    +e.text
+                        p Aurinko is&nbsp;at&nbsp;that exciting stage where every person that joins the team can have a&nbsp;major hand in&nbsp;our success and rapidly advance their careers in&nbsp;the process. Since the very beginning, we&nbsp;have been obsessed with hiring. Not just hiring, but finding the absolute right people to&nbsp;fit the company.
+                    +e.icon-wrapper
+                        +e('img').icon(src='/images/inhtml/people.svg', alt)
+                +e.text-wrapper
+                    +e.text
+                        p We&nbsp;believe it&nbsp;takes great people to&nbsp;make a&nbsp;great product. That&rsquo;s why we&nbsp;hire not only the perfect professional fits, but people who embody our company values.
+                        p
+                            | We&nbsp;are constantly on&nbsp;the lookout for new team members. Let&nbsp;us know if&nbsp;you are interested in&nbsp;joining our team by&nbsp;emailing&nbsp;us at: <a class="b-link b-link--command" href="mailto:jobs@aurinko.io" title="jobs@aurinko.io">jobs@aurinko.io</a>

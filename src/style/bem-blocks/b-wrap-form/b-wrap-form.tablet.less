@@ -1,0 +1,55 @@
+/* 768++  */
+.b-wrap-form {
+    &--aurinko {
+        padding-left: 0;
+        margin-top: 0;
+        padding-right: 0;
+        padding-top: 44px;
+
+        form {
+            max-width: 384px;
+            margin: auto;
+        }
+    }
+
+    &--aurinko & {
+        &__text-aurinko {
+            font-size: 17px;
+            line-height: 22px;
+            text-align: center;
+            display: block;
+            max-width: 271px;
+            margin: 0 auto 8px;
+        }
+    }
+
+    &--main {
+        position: static;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .b-wrap-form {
+        padding-top: 0;
+        margin-top: -10px;
+
+        &--aurinko {
+            position: absolute;
+            max-width: 386px;
+            right: 0;
+            z-index: 2;
+            padding: 33px;
+            border-radius: 27px;
+            box-shadow: 0px 10px 50px rgba(0, 0, 0, .1);
+            top: 43px;
+        }
+
+        &--main {
+            position: static;
+            max-width: 50%;
+            margin: 0 auto;
+        }
+    }
+}

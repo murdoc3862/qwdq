@@ -1,0 +1,117 @@
+/* 320++  */
+.b-input {
+    width: 100%;
+
+    &:not(:last-child) {
+        margin: 0 0 16px;
+    }
+
+    &--calculator {
+        width: 105px;
+    }
+
+    &--submit {
+        .nunito-bold();
+        color: @cl-white;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 30px;
+        text-transform: uppercase;
+        width: auto;
+    }
+
+    &__input-field {
+        .nunito-regular();
+        background: @cl-light-grayish-blue-darck;
+        border-radius: 12px;
+        border: 1px solid @cl-light-gray;
+        color: @cl-very-dark-grayish-blue;
+        font-size: 18px;
+        height: 48px;
+        line-height: 22px;
+        padding: 11px;
+        -webkit-appearance: none;
+        -moz-appearance:    none;
+        appearance:         none;
+
+        &--submit {
+            background: transparent;
+            border: none;
+            padding: 0 42px 0;
+            font-size: 14px;
+            line-height: 42px;
+            height: 42px;
+            color: @cl-white;
+            .nunito-bold();
+            background: linear-gradient(270deg, #f7931e, #ef4223, transparent, transparent);
+            border-radius: 22px;
+            background-position: 1% 50%;
+            background-size: 300% 300%;
+            background-color: @cl-vivid-orange;
+            transition: all .7s ease-out;
+            border-radius: 27px;
+
+            .no-touchevents &:hover,
+            .touchevents &:active {
+                background-position: 99% 50%;
+                border-color: transparent;
+            }
+        }
+
+        &::placeholder {
+            font-size: 18px;
+            line-height: 22px;
+            .nunito-extralight();
+            color: @cl-light-grayish-blue;
+        }
+
+        &--calculator {
+            background: @cl-white;
+        }
+
+        &--area,
+        &--yoxel,
+        &--pebbles {
+            height: 130px;
+        }
+    }
+
+    input.error {
+        border-color: @cl-vivid-red;
+        background-color: @cl-very-pale-mostly-white-red;
+    }
+
+    span.error {
+        color: @cl-vivid-red;
+        margin-top: 10px;
+        font-size: 13px;
+        line-height: 18px;
+        display: inline-block;
+    }
+
+    input.correct {
+        border-color: @cl-strong-green;
+        background-color: @cl-very-pale-green;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input:focus {
+        background: @cl-white;
+    }
+
+    &__label {
+        margin-bottom: 5px;
+        letter-spacing: .5px;
+        color: @cl-light-grayish-blue;
+        .nunito-regular();
+
+        .b-input--aurinko & {
+                color: @cl-white;
+        }
+    }
+}

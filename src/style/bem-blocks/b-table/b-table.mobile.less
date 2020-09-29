@@ -1,0 +1,111 @@
+/* 320++  */
+.b-table {
+    &:not(:last-child) {
+        margin: 0 0 25px;
+    }
+
+    &__caption {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 -15px 25px;
+    }
+
+    &__edition-name {
+        .nunito-bold();
+        font-size: 15px;
+        line-height: 22px;
+        text-align: center;
+        position: relative;
+        width: 50%;
+        color: @cl-vivid-orange;
+
+        &--integrated {
+            &:after {
+                content: '';
+                background: linear-gradient(0deg, rgba(247,147,30,1) 0%, rgba(239,67,35,1) 50%);
+                width: 1px;
+                position: absolute;
+                right: 0;
+                height: 20px;
+            }
+        }
+    }
+
+    &__head {
+        margin: 0 0 22px;
+    }
+
+    &__row {
+        display: flex;
+        margin: 0 -5px;
+        padding: 5px 0;
+        position: relative;
+
+        &:nth-child(2n) {
+            &:after {
+                background: @cl-light-grayish-blue-darck;
+                bottom: 0;
+                content: '';
+                left: -25px;
+                position: absolute;
+                right: 5px;
+                top: 0;
+                z-index: -1;
+            }
+        }
+
+        &--head {
+            padding: 0 0 4px;
+
+            &:nth-child(2n) {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:before {
+                background: @cl-very-dark-grayish-blue;
+                bottom: 0;
+                content: '';
+                height: 1px;
+                left: -30px;
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+
+    &__cell {
+        margin: 0 5px;
+        width: 70%;
+
+        .b-table--yoxel & {
+            width: 85%;
+        }
+
+        &--mobile {
+            display: none;
+        }
+
+        &--integrated,
+        &--custom {
+            width: 15%;
+
+            .b-table--yoxel & {
+                width: 15%;
+            }
+        }
+    }
+
+    &__title {
+        color: @cl-black;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    &__feature-name {
+        color: @cl-light-grayish-blue;
+        font-size: 15px;
+        line-height: 22px;
+    }
+}

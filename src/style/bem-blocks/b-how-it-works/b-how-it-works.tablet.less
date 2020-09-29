@@ -1,0 +1,163 @@
+/* 768++  */
+.b-how-it-works {
+    margin: 0 0 100px;
+
+    &__desc {
+        padding: 0;
+    }
+
+    &__list {
+        display: flex;
+        align-items: flex-start;
+        margin: 0 -17px;
+    }
+
+    &__item {
+        padding: 0 17px;
+        width: calc(~'100% / 3');
+
+        &:not(:last-child) {
+            margin: 0 0 48px;
+        }
+    }
+
+    &__number {
+        margin: 0 auto 48px;
+    }
+
+    &__text {
+        font-size: 20px;
+        line-height: 28px;
+
+        & > p {
+            &:not(:last-child) {
+                margin: 0;
+            }
+        }
+    }
+
+    &__list {
+        margin: 0;
+    }
+
+    &__text-des {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    &--page-pebble & {
+        &__list {
+            flex-direction: column;
+        }
+
+        &__item {
+            display: flex;
+            padding: 0;
+            width: 100%;
+
+            &:not(:last-child) {
+                margin: 0 0 46px;
+            }
+        }
+
+        &__number {
+            font-size: 44px;
+            margin: 0 37px 0 0;
+        }
+
+        &__text-wrapper {
+            flex: 1;
+            min-height: 74px;
+            align-items: center;
+            display: flex;
+        }
+    }
+
+    &--page-pebble {
+        .appeal {
+            display: block;
+            margin: 12px 0 0;
+            width: 357px;
+        }
+    }
+}
+
+.b-wrap-how {
+    position: relative;
+    &__arm,
+    &__grid {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        bottom: 0;
+        width: 30%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .b-how-it-works {
+        // &__text-wrapper {
+        //     .b-title {
+        //         text-align: center;
+        //     }
+        // }
+        &__list {
+            margin: 0 -47px;
+        }
+
+        &__item {
+            padding: 0 47px;
+        }
+
+        &__text-des {
+            max-width: 810px;
+            margin: 0 0 50px;
+        }
+
+        &--page-pebble & {
+            &__list {
+                margin: 0;
+            }
+
+            &__item {
+                padding: 0;
+                margin: 0;
+
+                &:nth-last-child(-n+3) {
+                    margin: 0;
+                }
+
+                &:not(:last-child) {
+                    margin: 0 0 46px;
+                }
+            }
+
+            &__text {
+                p {
+                    text-align: left;
+                }
+            }
+        }
+
+        &__text {
+            p {
+                text-align: justify;
+            }
+        }
+    }
+
+    .b-wrap-how {
+        position: relative;
+
+        &__arm,
+        &__grid {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            bottom: -35px;
+            width: auto;
+        }
+    }
+}

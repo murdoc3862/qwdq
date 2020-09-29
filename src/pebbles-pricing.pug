@@ -1,0 +1,144 @@
+//- ====================
+//- aurinko: pebbles
+//- 23-07-2020: sashakasha
+//- --------------------
+//- Pebble Pricing
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'pebbles-pricing';
+    - var pebbles = true;
+    - var aurinko = false;
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Pebble Pricing';
+    - var pebbles = true;
+    link(rel="apple-touch-icon" sizes="76x76" href=".././images/favicon/pebbles/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href=".././images/favicon/pebbles/ofavicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href=".././images/favicon/pebbles/favicon-16x16.png")
+    link(rel="manifest" href=".././images/favicon/pebbles/site.webmanifest")
+    link(rel="mask-icon" href=".././images/favicon/pebbles/safari-pinned-tab.svg" color="#5bbad5")
+    meta(name="msapplication-TileColor" content="#ffffff")
+    meta(name="theme-color" content="#ffffff")
+    title Pebbles Pricing
+    meta(name="description" content="Choose and view our pricing plans here.")
+//- Выводим content
+block content
+    include section/ui-kit/button.pug
+    include section/ui-kit/list.pug
+    include section/ui-kit/title.pug
+    include section/ui-kit/form.pug
+    include section/ui-kit/icon.pug
+    include section/ui-kit/input.pug
+    include section/ui-kit/drop-down.pug
+
+    +b.heading.--pebbles-pricing
+        .b-container
+            +e.wrapper
+                +title('h1', 'Pebbles Pricing').--h1.--heading
+
+    +b.pricing.--pebbles
+        .b-container
+            +e.wrapper
+                +b.card.--professional
+                    +e.wrapper.--professional
+                        +title('h2', 'Professional').--h2.--professional
+                        +title('h3', 'Simple, pay-as-you-go pricing. Pay only for what you need for as&nbsp;long as&nbsp;you need&nbsp;it.').--h3.--plan-card
+                        +list({
+                            'items':[{
+                                    'content': '30-day free trial'
+                                },
+                                {
+                                    'content': 'No&nbsp;credit card required to&nbsp;signup'
+                                },
+                                {
+                                    'content': 'Includes phone, chat and email support'
+                            }]
+                        })
+                    +e.buttons.--professional
+                        +e.price-wrapper
+                            +e('span').price $5
+                            +e('span').subtext Per active user per month
+                        +button('', true, 'https://app.threadbot.io/install').--regular.--professional
+                            span Get Started
+
+                +b.card.--professional
+                    +e.wrapper.--professional
+                        +title('h2', 'Enterprise').--h2.--enterprise
+                        +title('h3', 'For companies with special needs or&nbsp;many active users.').--h3.--plan-card
+                        +list({
+                            'items':[{
+                                    'content': 'Volume discounts'
+                                },
+                                {
+                                    'content': 'Annual contract'
+                                },
+                                {
+                                    'content': 'Faster, prioritized support'
+                                },
+                                {
+                                    'content': 'Personalized optimizations'
+                            }]
+                        })
+                    +e.buttons.--professional
+                        +button('', true, '/pebbles/form').--regular.--enterprise
+                            span Contact us
+
+    +b.questions
+        .b-container
+            +e.wrapper
+                +title('h2', 'Frequently asked questions:').--h2.--questions
+                include section/accordion.pug
+                +accordion({'items': [{
+                            'header': 'Do&nbsp;you offer a&nbsp;free trial?',
+                            'content': 'We&nbsp;offer 30&nbsp;days free of&nbsp;charge to&nbsp;all of&nbsp;our new users to&nbsp;let them test Pebbles. No&nbsp;credit card required. During those 30&nbsp;days, you can add as&nbsp;many accounts as&nbsp;needed!',
+                            'akk': '-active'
+                        },{
+                            'header': 'How many email accounts can I connect with Pebbles?',
+                            'content': 'As many as needed. You ll pay the same regardless of how many accounts you connect to Pebbles. The only thing that matters is how many users are using Pebbles.'
+                        },{
+                            'header': 'What payment options do&nbsp;I&nbsp;have?',
+                            'content': 'Credit card that is processed using Stripe payment service.'
+                    }], 'class':'--pebbles js-first-open'
+                })
+    include section/start.pug
+    +b.wrap-blocks.--form-aurinko.--main
+        +form({action: '/json/mail.php'}).--aurinko.--pebbles.--main.js-validate.js-ajax
+            +title('h3', 'See the power of Aurinko in action!').--h3.--aurinko
+            +e('p').text-aurinko Enter your info below and we&rsquo;ll get back to&nbsp;you shortly.
+            +input({
+                id: 'id-form',
+                type: 'hidden',
+                name: 'form',
+                value: 'Aurinko'
+            })
+            +input({
+                id: 'id-text',
+                type: 'text',
+                name: 'name',
+                text: 'Name'
+            }).--aurinko(required)
+            +input({
+                id: 'id-email',
+                type: 'email',
+                name: 'email',
+                text: 'Work Email Address'
+            }).--aurinko(required)
+            +input({
+                id: 'id-message',
+                type: 'textarea',
+                name: 'message',
+                placeholder: 'Message',
+                textarea: true,
+                text: 'Message'
+            }).--aurinko.--area
+            +input({
+                id: 'id-submit',
+                type: 'submit',
+                name: 'submit',
+                value: 'SUBMIT'
+            }).--submit

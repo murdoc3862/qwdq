@@ -1,0 +1,47 @@
+.b-quote {
+    padding: 9px 25px 90px 55px;
+    // background: linear-gradient(180deg, #FFF -3.74%, rgba(255, 255, 255, 0) 50.3%), @cl-light-grayish-orange;
+    position: relative;
+
+    &__image-wrapper {
+        border-radius: 50%;
+        height: 152px;
+        margin: 0px 13% 42px;
+        overflow: hidden;
+        width: 152px;
+        // box-shadow: 0px 0px 31px -1px #754c29;
+    }
+
+    &__text {
+        .nunito-bolditalic();
+        color: @cl-very-dark-grayish-blue;
+        font-size: 18px;
+        line-height: 25px;
+        margin: 0 0 31px;
+    }
+
+    &__author {
+        .nunito-bold();
+        color: @cl-dark-moderate-orange;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 5px;
+    }
+
+    &__post {
+        color: @cl-light-grayish-blue;
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    &__cache-top {
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .b-container {
+        padding: 0;
+    }
+}

@@ -1,0 +1,145 @@
+//- ====================
+//- aurinko: header
+//- 09-04-2020: sashakasha
+//- --------------------
+//- Header
+//- ====================
+mixin header()
+    include ../../section/ui-kit/button.pug
+    include ../../section/ui-kit/icon.pug
+    include ../../section/ui-kit/link.pug
+
+    +b.header(class!=attributes.class).js-header
+        .b-container.b-container--main
+            +e.wrapper
+                +e('a').logo-wrapper(href='/', title='Aurinko')
+                    +e.logo
+                        //- if colorlight == true
+                        //-     svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 503 500")
+                        //-         path(d="M209.2 110.1c1.6-.5 2.6-1.6 3.1-2.6l21-47.8 29.4 43.1c1 1 2.1 2.1 3.7 2.1s2.6-.5 4.2-1.6l37.7-36.3 10.5 51.4c.5 1.6 1 2.6 2.6 3.1 1 .5 2.6 1 4.2.5l49.3-19.2-10 51.4c0 1.6 0 3.1 1 4.2 1 1 2.1 1.6 3.7 2.1l52.4.5-29.4 43.6c-1 1-1 2.6-.5 4.2s1.6 2.6 2.6 3.1l48.2 20.8-44 29.1c-1 1-2.1 2.1-2.1 3.6s.5 2.6 1.6 3.6l36.7 37.4-51.9 10.4c-1.6.5-2.6 1-3.1 2.6-.5 1-.5 2.6 0 4.2l19.4 48.8-51.9-9.9c-1.6 0-3.1 0-4.2 1-1 1-1.6 2.1-2.1 3.6l-1 52.5-43-29.1c-1-1-2.6-1-4.2-.5s-2.6 1.6-3.1 2.6l-21 47.8-29.4-43.6c-1-1-2.1-2.1-3.7-2.1s-2.6.5-4.2 1.6l-37.7 36.3-10.5-51.4c-.5-1.6-1-2.6-2.6-3.1-1-.5-2.6-.5-4.2 0l-49.3 19.2 10-51.4c.5-1.6 0-3.1-1-4.2-1-1-2.1-1.6-3.7-1.6l-52.9-1 29.4-43.6c.5-1 1-2.6.5-4.2s-1.6-2.6-2.6-3.1l-48.2-20.8 44-29.1c1-1 2.1-2.1 2.1-3.6 0-1.6-.5-2.6-1.6-4.2l-36.7-37.4 51.9-10.4c1.6-.5 2.6-1 3.1-2.6.5-1 1-2.6 0-4.2l-19.4-48.8 51.9 9.9c1.6 0 3.1 0 4.2-1 1-1 1.6-2.1 1.6-3.6l1-51.9 44 29.1c1 .5 1.6 1 2.6 1 .6 0 1.1-.5 1.6-.5zm40.9-110.1c-1.6.5-2.6 1.6-3.1 2.6l-15.7 36.4-22.6-32.8c-1.6-2.1-4.7-2.6-6.8-1s-2.6 4.7-1.6 6.8l25.7 37.8-21 48.3-44-29.1.5-45.7c0-2.6-2.1-4.7-4.7-5.2-1 0-2.1.5-3.1 1-1 1-1.6 2.1-1.6 3.6l-.5 39.5-33.6-21.7c-2.1-1.6-5.2-1-6.8 1.6-1.6 2.1-1 5.2 1.6 6.8l38.8 25.4-1 53-52.4-9.9-16.9-42.6c-1-2.6-3.7-3.6-6.3-2.6-1 .5-2.1 1-2.6 2.1-.5 1-1 2.6 0 4.2l14.7 36.9-39.3-7.8c-2.6-.5-5.2 1-5.8 3.6-.5 2.6 1 5.2 3.7 5.7l45.6 8.8 19.4 48.8-51.9 10.4-32-32.7c-2.1-2.1-5.2-2.1-6.8 0-1 1-1.6 2.1-1.6 3.1 0 1.6.5 2.6 1.6 4.2l27.8 28.5-39.3 7.8c-2.6.5-4.2 3.1-3.7 5.7s3.1 4.2 5.8 3.6l45.1-9.3 37.2 37.9-44 29.6-42.6-18.2c-2.6-1-5.2 0-6.3 2.6-.5 1-.5 2.1 0 3.1.5 1.6 1.6 2.6 2.6 3.1l36.7 15.6-33 22.3c-3.7 1.6-4.2 4.2-2.6 6.8 1.6 2.1 4.7 2.6 6.8 1.6l38.3-25.4 48.8 20.8-29.4 44.1-46.1-.5c-2.6 0-4.7 2.1-5.2 4.7 0 1 .5 2.1 1 3.1 1 .5 2.6 1 4.2 1l39.8.5-22 33.2c-1.6 2.1-1 5.2 1.6 6.8 2.1 1.6 5.2 1 6.8-1.6l25.7-38.4 53.5 1-10 51.9-43 16.6c-2.6 1-3.7 3.6-2.6 6.2 1 2.6 3.7 3.6 6.3 2.6l37.2-14.5-8.4 39.5c-.5 2.6 1 5.2 3.7 5.7 2.6.5 5.2-1 5.8-3.6l8.9-45.2 49.3-19.2 10.5 51.4-33 31.7c-2.1 2.1-2.1 5.2 0 6.8 2.1 2.1 5.2 2.1 6.8 0l28.8-27.5 7.9 39c.5 2.6 3.1 4.2 5.8 3.6 2.6-.5 4.2-3.1 3.7-5.7l-9.4-45.2 38.3-36.9 29.9 43.6-17.8 43.1c-1 2.6 0 5.2 2.6 6.2s5.2 0 6.3-2.6l15.7-36.4 22.5 32.7c1.6 2.1 4.7 2.6 6.8 1.6 2.1-1.6 2.6-4.7 1.6-6.8l-25.7-37.9 21-48.3 44.6 29.1-.5 45.7c0 2.6 2.1 4.7 4.7 5.2 2.6 0 4.7-2.1 5.2-4.7l.5-39.5 33.5 21.8c2.1 1.6 5.2 1 6.8-1.6 1.6-2.1 1-5.2-1.6-6.8l-39.3-25.4 1-53 52.4 9.9 16.8 42.6c1 2.6 3.7 3.6 6.3 2.6 2.6-1 3.7-3.6 2.6-6.2l-14.7-36.9 39.3 7.8c2.6.5 5.2-1 5.8-3.6.5-2.6-1-5.2-3.7-5.7l-45.6-8.8-19.4-48.8 51.9-10.4 32 32.7c2.1 2.1 5.2 2.1 6.8 0 2.1-2.1 2.1-5.2 0-6.8l-27.8-28.6 39.3-7.8c2.6-.5 4.2-3.1 3.7-5.7s-3.1-4.2-5.8-3.6l-45.1 9.3-37.2-37.9 44-29.6 42.5 18.2c2.6 1 5.2 0 6.3-2.6 1-2.6 0-5.2-2.6-6.2l-36.7-15.6 33-22.3c2.1-1.6 2.6-4.7 1.6-6.8-1.6-2.1-4.7-2.6-6.8-1.6l-38.3 25.4-48.8-20.8 29.9-44.1 46.1.5c2.6 0 4.7-2.1 5.2-4.7 0-2.6-2.1-4.7-4.7-5.2l-39.8-.5 22-33.2c1.6-2.1 1-5.2-1.6-6.8-2.1-1.6-5.2-1-6.8 1.6l-25.7 38.4-53.5-1 10-51.9 43-16.6c2.6-1 3.7-3.6 2.6-6.2-.5-1-1-2.1-2.1-2.6-1-.5-2.6-1-4.2 0l-37.2 14.5 7.9-39c.5-2.6-1-5.2-3.7-5.7-2.6-.5-5.2 1-5.8 3.6l-8.9 45.2-49.3 19.2-10.5-51.9 33-31.2c2.1-2.1 2.1-5.2 0-6.8-1-1-2.1-1.6-3.1-1.6-1.6 0-2.6.5-3.7 1.6l-28.8 27.8-7.9-39c-.5-2.6-3.1-4.2-5.8-3.6s-4.2 3.1-3.7 5.7l9.4 44.7-38.3 36.9-29.7-43.7 18.3-42.1c1-2.6 0-5.2-2.6-6.2-.5-1-1.6-1-2.1-1h-1.5z")
+                        //-     +e('img').logo.--hidden(src='/images/inhtml/logo-part1.svg')
+                        //- else
+                        +e('img').logo(src='/images/inhtml/logo-part1.svg')
+                    +icon('logo-part2').--logo-part2
+
+                +e.nav
+                    +e.nav-burger.js-header-burger
+                    +b.nav-overlay.js-header-burger-overlay
+                        +e.content
+                            +e('a').logo-wrapper(href='/', title='Aurinko')
+                                +e('img').logo(src='/images/inhtml/logo-part1.svg')
+                                +icon('logo-part2').--logo-part2
+                            +b('nav').nav
+                                +e('ul').list
+                                    +e('li').item.--inner
+                                        +e('a').link(href='javascript:void(0);', title='OUR APPS Powered by Aurinko', data-dropdown-link='header-desctop').--inner
+                                            +e('span').nav-text.--inner
+                                                span Our Apps
+                                                |  Powered by Aurinko
+                                            +icon('toggle').--nav
+
+                                        +e('ul').inner-list(data-dropdown-list='header-desctop', data-highlight="inactive")
+                                            +e('li').inner-item
+                                                +e('a').inner-link(href='/yoxel', title='').js-highlight-link
+                                                    +e.item-logo-wrapper.--mobile.--yoxel
+                                                        +e('img').item-logo(src='/images/inhtml/yoxel.svg')
+                                                    +e.item-logo-wrapper.--desktop
+                                                        svg(width="23", height="29", viewBox="0 0 23 29", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                            path(d="M8.71429 19.9745C8.36137 19.0241 2.66667 6.31293 0 0H5.42857L11.7143 14.648L17.5714 0H23C20.7143 5.37585 15.6571 17.3408 13.7143 22.1939C11.2857 28.2602 8.51908 29 6.42857 29H2.57143V24.5612H6.42857C8 24.5612 9.42857 21.898 8.71429 19.9745Z", fill="#231F20")
+                                                    +e.desc
+                                                        +e.title Yoxel
+                                                        +e.text Smart inbox integrations for Salesforce
+                                            +e('li').inner-item
+                                                +e('a').inner-link(href='/pebbles', title='').js-highlight-link
+                                                    +e.item-logo-wrapper.--mobile.--pebbles
+                                                        +e('img').item-logo(src='/images/inhtml/pebbles.svg')
+                                                    +e.item-logo-wrapper.--desktop
+                                                        svg(width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                            path(fill-rule="evenodd" clip-rule="evenodd" d="M0 2.19512C0 0.982789 0.982415 0 2.19429 0L29.8057 0C31.0176 0 32 0.982789 32 2.19512C32 3.40745 31.0176 4.39024 29.8057 4.39024L2.19429 4.39024C0.982415 4.39024 0 3.40745 0 2.19512Z", fill="#F6921E")
+                                                            path(fill-rule="evenodd" clip-rule="evenodd" d="M0 9.51226C0 8.29993 0.982415 7.31714 2.19429 7.31714L29.8057 7.31714C31.0176 7.31714 32 8.29993 32 9.51226C32 10.7246 31.0176 11.7074 29.8057 11.7074L2.19429 11.7074C0.982415 11.7074 0 10.7246 0 9.51226Z", fill="#00994E")
+                                                            path(fill-rule="evenodd" clip-rule="evenodd" d="M2.19429 14.634C0.982415 14.634 0 15.6168 0 16.8292C0 18.0415 0.982415 19.0243 2.19429 19.0243H13.7141V27.8042C13.7141 29.0165 14.6965 29.9993 15.9084 29.9993C17.1202 29.9993 18.1026 29.0165 18.1026 27.8042V19.0243H29.8057C31.0176 19.0243 32 18.0415 32 16.8292C32 15.6168 31.0176 14.634 29.8057 14.634H2.19429Z", fill="#90278E")
+                                                    +e.desc
+                                                        +e.title Pebbles
+                                                        +e.text Turn Slack threads into prioritized tasks
+                                    +e('li').item
+                                        +e('a').link(href='/about', title='About Aurinko')
+                                            +e('span').nav-text
+                                                | About
+                                                span  Aurinko
+                                    +e('li').item
+                                        +e('a').link(href='https://docs.aurinko.io/', title='Docs')
+                                            +e('span').nav-text Docs
+                                    +e('li').item
+                                        +e('a').link(href='/pricing', title='Pricing')
+                                            +e('span').nav-text Pricing
+                                    +e('li').item.--desktop
+                                        +e('a').link(href='/form', title='Contact Us')
+                                            +e('span').nav-text Contact Us
+                            +e.buttons(class=`${main ? '' : '--nav'}`)
+                                +b('a').button(href='https://aurinko.io/signup', title='Login').--menu Login
+                                +b('a').button(href='https://aurinko.io/login', title='Get Started').--color.--menu Get Started
+                    +b.overlay.js-header-burger-overlay
+                +e.buttons
+                    //- if yoxel == true || pebbles == true
+                    //-     +b('a').button(href='/form', title='Get Started').--color.--menu.--hide Get Started
+                    //-     +b('a').button(href='/form', title='Login').--menu Login
+                    //- else
+                    +b('a').button(href='https://aurinko.io/signup', title='Login').--menu Login
+                    +b('a').button(href='https://aurinko.io/login', title='Get Started').--color.--menu Get Started
+
+    if pebbles == true
+        +b.navbar.-sticky
+            +e.wrapper
+                .b-container.b-container--main
+                    +e.comp
+                        +e('a').title-link(href='/pebbles', title='Pebbles').--pebbles.--none
+                            +e.logo-wrapper
+                                +e('img').logo(src='/images/inhtml/pebbles.svg')
+                            +icon('toggle').--navbar
+                        include ../../section/ui-kit/link.pug
+                        +e('button').title-button.--pebbles.b-navbar__title-link
+                            +e.logo-wrapper
+                                +e('img').logo(src='/images/inhtml/pebbles.svg')
+                            +icon('toggle').--navbar
+                        +e('ul').list
+                            +e('li').item
+                                +e('a').link(href='/pebbles/pricing', title='Pricing').--pebbles Pricing
+                        +e.buttons.--margin
+                            +link('Contact Us', true, '/pebbles/form').--desktop.--navbar.--collapsed.--collapsed-pebbles
+                        +e.buttons
+                            +button('Get Started', true, 'https://app.threadbot.io/install').--navbar.--pebbles
+            +e.collapsed-wrapper
+                .b-container.b-container--main
+                    +e('ul').collapsed-list
+                        +e('li').collapsed-item
+                            +e('a').collapsed-link(href='/pebbles/pricing', title='Pricing').--pebbles Pricing
+                        +e('li').collapsed-item
+                            +b('a').button(href='/pebbles/form', title='Contact Us').--collapsed.--collapsed-pebbles Contact Us
+
+    else if yoxel == true
+        +b.navbar.-sticky
+            +e.wrapper
+                .b-container.b-container--main
+                    +e.comp
+                        +e('a').title-link(href='/yoxel', title='Yoxel').--yoxel.--none
+                            +e.logo-wrapper
+                                +e('img').logo(src='/images/inhtml/yoxel.svg')
+                            +icon('toggle').--navbar
+                        +e('button').title-button.--yoxel.b-navbar__title-link
+                            +e.logo-wrapper
+                                +e('img').logo(src='/images/inhtml/yoxel.svg')
+                            +icon('toggle').--navbar
+                        +e('ul').list
+                            +e('li').item
+                                +e('a').link(href='/yoxel/pricing', title='Pricing').--yoxel Pricing
+                        +e.buttons.--margin
+                            +link('Contact Us', true, '/yoxel/form').--desktop.--navbar.--collapsed.--collapsed-yoxel
+                        +e.buttons
+                            +button('Get Started', true, 'https://appexchange.salesforce.com/listingDetail?listingId=a0N3000000B38M0EAJ').--navbar.--yoxel
+            +e.collapsed-wrapper
+                .b-container.b-container--main
+                    +e('ul').collapsed-list
+                        +e('li').collapsed-item
+                            +e('a').collapsed-link(href='/yoxel/pricing', title='Pricing').--yoxel Pricing
+                        +e('li').collapsed-item
+                            +b('a').button(href='/yoxel/form', title='Contact Us').--collapsed.--collapsed-yoxel Contact Us

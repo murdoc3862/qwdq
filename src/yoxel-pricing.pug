@@ -1,0 +1,213 @@
+//- ====================
+//- aurinko: yoxel-pricing
+//- 23-07-2020: sashakasha
+//- --------------------
+//- Yoxel Pricing
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'yoxel-pricing';
+    - var yoxel = true;
+    - var aurinko = false;
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Yoxel Pricing';
+    - var yoxel = true;
+    link(rel="apple-touch-icon" sizes="76x76" href=".././images/favicon/yoxel/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href=".././images/favicon/yoxel/ofavicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href=".././images/favicon/yoxel/favicon-16x16.png")
+    link(rel="manifest" href=".././images/favicon/yoxel/site.webmanifest")
+    link(rel="mask-icon" href=".././images/favicon/yoxel/safari-pinned-tab.svg" color="#5bbad5")
+    meta(name="msapplication-TileColor" content="#2d89ef")
+    title Yoxel Pricing
+    meta(name="description" content="Choose and view our pricing plans here.")
+
+//- Выводим content
+block content
+    include section/accordion.pug
+    include section/price-block.pug
+    include section/table.pug
+    include section/ui-kit/button.pug
+    include section/ui-kit/list.pug
+    include section/ui-kit/title.pug
+    include section/ui-kit/form.pug
+    include section/ui-kit/icon.pug
+    include section/ui-kit/input.pug
+    include section/ui-kit/drop-down.pug
+
+    +b.heading.--pricing.--yoxel-pricing
+        .b-container
+            +e.wrapper
+                +title('h1', 'Yoxel Pricing').--h1.--heading.--yoxel-pricing
+                .b-hero__text 
+                    p Choose and view our pricing plans here.
+    +b.pricing
+        .b-container
+            +e.wrapper
+                +b.card.--integrated
+                    +title('h2', 'Monthly Plan').--h2.--integrated.--yoxel-price
+                    +title('h3', 'Simple, pay-as-you-go pricing. Pay only for what you need for as&nbsp;long as&nbsp;you need&nbsp;it.').--h3.--plan-card
+                    +list({
+                        'items':[{
+                                'content': '30-day free trial'
+                            },
+                            {
+                                'content': 'No&nbsp;credit card required to&nbsp;signup'
+                            },
+                            {
+                                'content': 'Includes phone, chat and email support'
+                            },
+                            {
+                                'content': 'Personalized optimizations'
+                        }]
+                    })
+
+                +b.card.--custom
+                    +title('h2', 'Custom Plan').--h2.--integrated.--yoxel-price
+                    +title('h3', 'For companies with special needs or many active users.').--h3.--plan-card
+                    +list({
+                        'items':[{
+                                    'content': 'Volume discounts'
+                                },
+                                {
+                                    'content': 'Annual contract'
+                                },
+                                {
+                                    'content': 'Faster, prioritized support'
+                                },
+                                {
+                                    'content': 'Personalized optimizations'
+                            }]
+                    })
+            +b.calculator.--yoxel
+                    +e.wrapper
+                        +e.buttons
+                            +button('', true, 'javascript:void(0);').--regular.--integrated.js-toogle-calc
+                                span Calculate your monthly fee
+                                include section/ui-kit/icon.pug
+                                +icon('toggle').--button
+                            +button('', true, '/yoxel/form').--regular.--custom.--desktop
+                                span Contact us
+                        +price-block({'items': [{
+                                    'title': 'Starter',
+                                    'sync_frequency': 'every hour',
+                                    'price': '$10'
+                                },{
+                                    'title': 'Professional',
+                                    'sync_frequency': 'every 30 minutes',
+                                    'price': '$15'
+                                },{
+                                    'title': 'Strategic',
+                                    'sync_frequency': 'every 10 minutes',
+                                    'price': '$20'
+                            }]
+                        })
+    +b.feature-editions
+        .b-container
+            +e.wrapper
+                +title('h2', 'What is included in every plan:').--h2.--feature-editions.--yoxel-pricing
+
+                +table-yoxel('Features',
+                        {'items': [{
+                            'feature_name': 'Full Yoxel sync (calendar, contacts, email and tasks)'
+                        },{
+                            'feature_name': 'inbox assistant app'
+                        },{
+                            'feature_name': 'Bi-directional sync'
+                        },{
+                            'feature_name': 'Native Salesforce setup'
+                        },{
+                            'feature_name': 'Create, read, modify and delete calendar events, emails and contacts from any integrated service'
+                        },{
+                            'feature_name': 'Drip email assistant'
+                        },{
+                            'feature_name': 'Attachments sync'
+                        },{
+                            'feature_name': 'Template-based setup'
+                        },{
+                            'feature_name': 'De-duplication'
+                    }]
+                })
+
+                +table-yoxel('Security and Privacy:',
+                        {'items': [{
+                            'feature_name': 'Deployment in Heroku cloud'
+                        },{
+                            'feature_name': 'Pre-built security'
+                        },{
+                            'feature_name': 'Authentication scopes'
+                        },{
+                            'feature_name': 'Hosted authentication'
+                        },{
+                            'feature_name': 'Data encryption'
+                        },{
+                            'feature_name': '99.9% reliability'
+                    }]
+                })
+
+                +table-yoxel('Scalability:',
+                        {'items': [{
+                            'feature_name': 'Webhooks-based API'
+                    }]
+                })
+
+    +b.questions
+        .b-container
+            +e.wrapper
+                +title('h2', 'Frequently asked questions:').--h2.--questions.--yoxel-pricing
+                +accordion({'items': [{
+                            'header': 'Do&nbsp;you offer a&nbsp;free trial?',
+                            'content': 'We&nbsp;offer 30&nbsp;days free of&nbsp;charge to&nbsp;all of&nbsp;our new users to&nbsp;let them test Pebbles. No&nbsp;credit card required. During those 30&nbsp;days, you can add as&nbsp;many accounts as&nbsp;needed!',
+                            'akk': '-active'
+                        },{
+                            'header': 'Can I just purchase a subscription to just one service (ex. calendar, contacts, tasks or email)?',
+                            'content': 'No. Your subscription covers the full Yoxel platform.  Unbundling our technology would diminish its power and increase complexity with our plans.'
+                        },{
+                            'header': 'What payment options do&nbsp;I&nbsp;have?',
+                            'content': 'Credit card that is processed using Stripe payment service.'
+                    }, {
+                            'header': 'Can I change my plan later?',
+                            'content': 'Yes, you can upgrade or downgrade at any time. If you choose to upgrade, you ll pay a pro-rated amount for the rest of the month. If you choose to downgrade, you ll be credited on next month s bill.'
+                    }], 'class':'--yoxel js-first-open'
+                })
+    include section/start.pug
+    +b.wrap-blocks.--form-aurinko.--main
+        +form({action: '/json/mail.php'}).--aurinko.--main.--yoxel.js-validate.js-ajax
+            +title('h3', 'See the power of Aurinko in action!').--h3.--aurinko
+            +e('p').text-aurinko Enter your info below and we&rsquo;ll get back to&nbsp;you shortly.
+            +input({
+                id: 'id-form',
+                type: 'hidden',
+                name: 'form',
+                value: 'Aurinko'
+            })
+            +input({
+                id: 'id-text',
+                type: 'text',
+                name: 'name',
+                text: 'Name'
+            }).--aurinko(required)
+            +input({
+                id: 'id-email',
+                type: 'email',
+                name: 'email',
+                text: 'Work Email Address'
+            }).--aurinko(required)
+            +input({
+                id: 'id-message',
+                type: 'textarea',
+                name: 'message',
+                placeholder: 'Message',
+                textarea: true,
+                text: 'Message'
+            }).--aurinko.--area
+            +input({
+                id: 'id-submit',
+                type: 'submit',
+                name: 'submit',
+                value: 'SUBMIT'
+            }).--submit

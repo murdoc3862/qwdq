@@ -1,0 +1,76 @@
+/* 1366++  */
+.b-info-block {
+    &--margin {
+        margin: 0 0 160px;
+    }
+
+    &--yoxel {
+        &:not(:last-child) {
+            margin: 0 0 80px;
+        }
+
+        &:nth-child(even) {
+            .b-info-block__wrap-elements {
+                img {
+                    margin-left: 85px;
+                }
+            }
+        }
+
+        &:nth-child(odd) {
+            .b-info-block__wrap-elements {
+                img {
+                    margin-right: 85px;
+                }
+            }
+        }
+    }
+
+    &__wrap-elements {
+        .b-info-block--yoxel:nth-child(2n + 1) {
+            .b-info-block__wrap-content {
+                margin: 0 0 0 60px;
+            }
+
+            .b-info-block___wrap-img {
+                margin: 0;
+            }
+        }
+
+        .b-info-block--yoxel:nth-child(2n) {
+            .b-info-block__wrap-content {
+                margin: 0;
+            }
+
+            .b-info-block___wrap-img {
+                margin: 0 0 0 60px;
+            }
+        }
+    }
+
+    &__wrap-img {
+        width: 30%;
+        margin: 0 0 0 165px;
+        margin-top: -40px;
+
+        .b-info-block--yoxel & {
+            text-align: center;
+            width: calc(~'50%');
+            margin: 0;
+        }
+
+        .b-info-block--yoxel:nth-child(2n) & {
+            text-align: center;
+        }
+    }
+
+    &__wrap-content {
+        width: 46%;
+
+        .b-info-block--yoxel & {
+            padding: 10px 0 0;
+            width: calc(~'50%');
+            width: 558px;
+        }
+    }
+}

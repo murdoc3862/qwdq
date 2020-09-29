@@ -1,0 +1,67 @@
+/* 1366++  */
+.b-intro {
+    margin: 48px 0 160px;
+
+    &__wrapper {
+        position: relative;
+        align-items: flex-start;
+    }
+
+    &__desc-wrapper {
+        align-items: center;
+        bottom: 0;
+        display: flex;
+        margin: 0;
+        top: 0;
+        width: 70%;
+    }
+
+    &__desc {
+        margin: 40px 0 0;
+        padding-left: 0px;
+    }
+
+    &__text {
+        margin: 0 0 48px;
+        width: 495px;
+    }
+
+    &__image-wrapper {
+        width: 50%;
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__image-wrapper {
+        .b-intro__image--pebble {
+            width: 100%;
+        }
+    }
+
+    &--pebbles {
+        margin: 0 0 160px;
+        padding: 77px 0 0;
+    }
+
+    &--pebbles & {
+        &__desc-wrapper {
+            width: 38%;
+        }
+
+        &__desc {
+            padding-top: 0;
+        }
+
+        &__image-wrapper {
+            margin-top: 0;
+            margin-right: -22.5%;
+            width: 68%;
+        }
+
+        &__wrapper {
+            align-items: center;
+        }
+    }
+}

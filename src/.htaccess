@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Rewrite --- /yoxel/form => /index.html
+RewriteRule ^yoxel/pricing$ /yoxel-pricing.html?&%{QUERY_STRING}
+RewriteRule ^yoxel/form$ /double-menu-yoxel.html?&%{QUERY_STRING}
+RewriteRule ^pebbles/pricing$ /pebbles-pricing.html?&%{QUERY_STRING}
+RewriteRule ^pebbles/form$ /double-menu-pebble.html?&%{QUERY_STRING}
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^.]+)$ $1.html [NC,L]

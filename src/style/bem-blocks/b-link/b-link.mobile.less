@@ -1,0 +1,58 @@
+/* 320++  */
+.b-link {
+    color: @cl-vivid-orange;
+    display: inline-block;
+    position: relative;
+    transition: color @animation-time ease-out;
+    text-decoration: underline;
+
+    .no-touchevents &:hover,
+    .touchevents &:active {
+        color: @cl-cinnabar;
+    }
+
+    &--mark {
+        color: @cl-purple;
+    }
+
+    &--command {
+        .nunito-bold();
+        color: @cl-dark-moderate-orange;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    &--email-stroke {
+        display: inline-block;
+    }
+
+    &--collapsed {
+        font-size: 12px;
+        height: 32px;
+        margin-right: 10px;
+
+        &-pebbles {
+            color: @cl-purple;
+            &:hover {
+                color: @cl-purple;
+            }
+        }
+
+        &-yoxel {
+            color: @cl-dark-blue;
+            &:hover {
+                color: @cl-dark-blue;
+            }
+        }
+    }
+
+    &--collapsed {
+        display: none;;
+    }
+
+    &--collapsed-pebbles {
+        &:hover {
+            color: @cl-purple!important;
+        }
+    }
+}

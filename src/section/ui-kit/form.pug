@@ -1,0 +1,4 @@
+mixin form(data)
+    +b.wrap-form&attributes(attributes)
+        +e('form')(action=data.action data-netlify="true" name=data.name)
+            block

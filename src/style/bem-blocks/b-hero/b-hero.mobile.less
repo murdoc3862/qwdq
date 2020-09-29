@@ -1,0 +1,129 @@
+/* 320++  */
+.b-hero {
+    margin: 0 0 28px;
+    padding: 120px 0 0;
+    position: relative;
+
+    &__wrapper {
+        padding: 0 10px 0 40px;
+    }
+
+    &__desc-wrapper {
+        margin: 0 0 40px;
+
+        &--bottom {
+            margin-bottom: 0;
+        }
+    }
+
+    &__text {
+        color: @cl-light-grayish-blue;
+        font-size: 18px;
+        line-height: 25px;
+        margin-bottom: 20px;
+
+        & > p {
+            margin: 0;
+
+            &:not(:last-child) {
+                margin: 0 0 22px;
+            }
+        }
+
+        .b-hero__desc-wrapper--bottom & {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    }
+
+    &__sub-wraper {
+        padding: 0 10px 0 40px;
+    }
+
+    &__image-wrapper {
+        margin-bottom: 15px;
+    }
+
+
+    .mark {
+        color: @cl-dark-blue;
+    }
+
+    &__cache-top {
+        display: none;
+    }
+
+    &__sub {
+        background: linear-gradient(180deg, #F0F0F4 24.28%, #D5D5E2 89.04%);
+        padding-top: 40px;
+        padding-bottom: 40px;
+        // border-top-left-radius: 101px;
+        // border-top-right-radius: 101px;
+        // margin-top: 40px
+    }
+
+    &__dark-blue {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 80px;
+        left: 0;
+        z-index: -1;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-position: left;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('/../../images/inhtml/dark-blue-semicircle.svg');
+        }
+    }
+
+    &__blue {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 24%;
+        right: 0;
+        z-index: -1;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            background-position: right;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('/../../images/inhtml/blue-semicircle.svg');
+        }
+    }
+
+    &__gray-circle {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        z-index: -1;
+        &--p1 {
+            left: 70%;
+            top: 5%;
+        }
+
+        &--p2 {
+            left: 5%;
+            top: 26%;
+        }
+
+        &--p3 {
+            left: 85%;
+            top: 45%;
+        }
+    }
+}

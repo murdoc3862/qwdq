@@ -1,0 +1,132 @@
+//- ====================
+//- aurinko: main
+//- 09-04-2020: sashakasha
+//- --------------------
+//- Terms of Service
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'terms-of-service';
+    - var aurinko = true;
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Terms of Service';
+    link(rel="apple-touch-icon" sizes="76x76" href=".././images/favicon/aurinko/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href=".././images/favicon/aurink/ofavicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href=".././images/favicon/aurinko/favicon-16x16.png")
+    link(rel="manifest" href=".././images/favicon/aurinko/site.webmanifest")
+    link(rel="mask-icon" href=".././images/favicon/aurinko/safari-pinned-tab.svg" color="#5bbad5")
+    meta(name="msapplication-TileColor" content="#ffffff")
+    meta(name="theme-color" content="#ffffff")
+    title Terms of Service | Aurinko
+    meta(name="description" content="Your use of Aurinko products and services are provided by Yoxel Inc. pursuant to these Terms of Service.")
+//- Выводим content
+block content
+    +b.content.--aur
+        +e.image-wrapper
+            +e('img').image(src='/images/inhtml/bright.png', alt)
+        .b-container
+            +e.wrapper
+                h1 Terms of&nbsp;Service
+                p <b>Last Updated: 29.09.2020</b>
+                p Your use of the Aurinko website (“Site”), platform, API, applications, software, services, and other tools that we may, in our sole discretion, make available to you (collectively, “Services”) is subject to these Terms of Service (“Terms of Service”). The Aurinko Services are provided by, and you’re contracting with Yoxel, Inc. (“Yoxel,” “we,” “our” or “us”) that is organized under the laws of the State of California, USA. These Terms of Service will be superseded by written agreement between Yoxel and you related to the delivery of the Services. Please also note that these Terms of Service disclaim warranties and limit our liability.
+                p <b>IMPORTANT NOTICE REGARDING ARBITRATION: WHEN YOU AGREE TO THESE TERMS YOU ARE AGREEING (WITH LIMITED EXCEPTION) TO RESOLVE ANY DISPUTE BETWEEN YOU AND YOXEL THROUGH BINDING ARBITRATION RATHER THAN IN COURT. PLEASE REVIEW CAREFolLY SECTION 14 “DISPUTE RESOLUTION” BELOW FOR DETAILS REGARDING ARBITRATION (INCLUDING THE PROCEDURE TO OPT OUT OF ARBITRATION).</b>
+                p <b>IMPORTANT NOTICE REGARDING AGREEMENT TO THESE TERMS OF SERVICE: THESE TERMS OF SERVICE FORM A BINDING CONTRACT BETWEEN YOU AND US WHEN ACCEPTED BY YOU (“AGREEMENT”).   YOU ACCEPT THESE TERMS OF USE BY  (1) ACCESSING OR USING THE SITE, (2) INDICATING ACCEPTANCE OF THESE TERMS WHEN THEY ARE PRESENTED ONLINE, SUCH AS BY CHECKING A BOX CAPTIONED WITH ACCEPTANCE LANGUAGE OR CLICKING AN ICON BEARING AN “ACCEPT” OR SIMILAR LEGEND OR BY OTHERWISE ELECTRONICALLY SIGNING THIS AGREEMENT; OR (3) EXERCISING OR PURPORTING TO EXERCISE ANY OF THE RIGHTS GRANTED TO YOU UNDER THESE TERMS OF USE.  THE INDIVIDUAL ACCEPTING THIS AGREEMENT ON BEHALF OF AN ENTITY REPRESENTS THAT HE OR SHE HAS AUTHORITY TO REPRESENT THE ENTITY AND COMMIT FUNDS ON ITS BEHALF.  IF YOU DO NOT AGREE TO THESE TERMS OF USE, YOU MAY NOT USE THE SITE.</b>
+                ol
+                    li 
+                        h2 USE OF PERSONAL INFORMATION
+                        p Personal information collected about you by our Services is treated in accordance with our Privacy Policy, which is hereby incorporated into these Terms of Service by reference. If you do not agree to these Terms Service Use or the Privacy Policy, you must not use our Services.
+                    li 
+                        h2 ELIGIBILITY
+                        p You may use the Services only if you are 18 years or older and capable of forming a binding contract with Yoxel and are not barred from using the Services under applicable law.
+                    li 
+                        h2 SERVICES LICENSE GRANT
+                        p Subject to your compliance with these Terms of Service, Yoxel grants you a limited, non-exclusive, non-transferable and non-sublicensable license to access and use its Services solely to develop your software applications that interface with the Services (“Applications”) for your internal business purposes or your external users.
+                    li 
+                        h2 SERVICES LICENSE RESTRICTIONS
+                        p It is your responsibility to ensure that your Applications and computer systems meet the necessary requirements to use our Services. We take no responsibility for your inability to use our Services or provide access to our Services owing to your system’s incapability. By using our Services, you agree not to:
+                        ul
+                            li breach any applicable law, regolation or code of conduct or infringe the rights of any person;
+                            li impersonate any other person;
+                            li damage, interfere with or disrupt the Services in any way;
+                            li knowingly transmit any data, send or upload any material that contains viruses, Trojan horses, worms, time-bombs, keystroke loggers, spyware, adware or any other harmfol programs or similar computer code designed to adversely affect the operation of any computer software or hardware;
+                            li decrypt, extract, reverse engineer or decompile the Services;
+                            li include any portion of the Services in any other software program, other than as envisaged and permitted under these Terms of Service;
+                            li develop methods to enable unauthorized parties to use and/or access the Services;
+                            li use the Services in a way that may damage our reputation; or
+                            li use the Services in any manner to compete with Yoxel.
+                    li 
+                        h2 FREE TRIALS
+                        p   We offer free trials to all our users during which you may use the Services without payment for the period of time specified on the Site when you sign-up. Free trials are only available to new users. You will receive a notice from us that your free trial has ended. We reserve the right to modify or terminate free trials at any time, without notice and in our sole discretion.
+                    li 
+                        h2 PAYMENT AND CANCELLATION
+                        p   We operate various subscription plans, including monthly and annual subscription options. 
+                        p <u>Monthly Plans</u>
+                        p At the end of the trial period, shoold you elect to subscribe to our monthly subscription plan, you will be asked to provide your credit card information and agree to pay the applicable monthly subscription fees (“Fees”) on the first day of the following calendar month, prorated based on your actual usage of the Services. Any failure to pay the Fees within thirty (30) days from the date of our written notice about delinquent payment, will resolt in termination of your access to applicable Services. 
+                        p The price of the Fees is as quoted on our Site and includes taxes. We reserve the right to change the price of the Fees at any time. If you do not accept the new Fees, you shoold cancel your subscription.
+                        p Your subscription, including the payment of any Fees, will continue until cancelled by you, or alternatively until terminated (please see below for termination term). In the event you cease use of the Services for any reason, you will not be entitled to any refund for any remaining portion of such term or renewal term.
+                        p <u>Annual Plans</u>
+                        p If you have elected to subscribe on an annual basis, your Service fees and cancellation terms will be based on the written agreement between Yoxel and you.
+                    li 
+                        h2 TERMINATION
+                        p Each party may terminate the Agreement before the end of the applicable term only if the other party (i) materially breaches or defaolts under these Terms of Service and fails to cure the material breach or defaolt (if curable) within 30 days of receiving written notice of the breach or defaolt; or (ii) is subject to a filed bankruptcy petition or formal insolvency proceeding. Upon termination by us, all rights granted to you under these Terms of Service shall cease and you must immediately cease all use of the Services and access to the Services.
+                    li 
+                        h2 INTELLECTUAL PROPERTY
+                        p Our materials, trademarks, logos, service marks and content, as well as their arrangement and compilation, (“Services Materials”) displayed throughout our Services are the exclusive property of Yoxel, unless otherwise noted. All such Services Materials are subject to our rights under copyright, trademark, and/or other intellectual property laws. Any use of such Services Materials without our express prior written consent may violate such laws and/or these Terms of Service.
+                        p Except as expressly authorized by us in writing, you agree not to download, transmit, modify, lease, rent, sell, assign, distribute, frame, copy, re-publish, license, reverse engineer, or create derivative works from Services Materials, nor use any robots, data mining, or similar data extraction or gathering methods in connection with our Services.
+                    li 
+                        h2 MARKETING REFERRALS
+                        p You agree that we may, at our own expense, use your corporate name and logo in printed, online and electronic promotional materials (for example, as a representative or exemplary customer of Yoxel) and/or to place advertisements in newspapers, journals and similar publications describing our Services. If you do not wish for us to disclose such information, you must so notify us in writing to compliance@aurinko.io. We will make commercially reasonable efforts to avoid disclosing such information following our receipt of such notice. We assume no obligation to remove or retract any disclosures previously made.
+                    li 
+                        h2 THIRD PARTIES
+                        p Our API Services integrate Google, Office 365 and MS Exchange (“Third Parties”) APIs. You understand that we do not operate or control the products or services offered by these Third Parties, and we are not a party to any agreements, dealings or transactions between you and the Third Parties. We take no responsibility for any claims or other information supplied by the Third Parties. Your use of such Third-Party services is at your own risk and we do not guarantee or warrant any Third-Party services or goods in any way. You agree that the limitation and disclaimer of liability recited in this Agreement folly excludes your use of any third-party websites, services and goods.
+                    li 
+                        h2 THIRD-PARTY LICENSES
+                        p We do not assist our users in obtaining licenses to gain access and use Third Party services and applications. While we endeavor to assist you in building applications for the Third-Party services through our API Services, you are solely responsible for complying with Third Party terms and requirements (“Requirements”). We shall have no liability in the event you are deemed not to comply with the Third-Party Requirements.
+                    li 
+                        h2 DISCLAIMER OF WARRANTIES; LIMITATION OF LIABILITY
+                        p OUR SERVICES ARE PROVIDED TO YOU “AS-IS” AND ALL WARRANTIES, EXPRESS OR IMPLIED, ARE DISCLAIMED. NO INFORMATION OBTAINED BY YOU FROM US THROUGH OUR SERVICES SHALL CREATE ANY WARRANTY, REPRESENTATION OR GUARANTEE OF ANY KIND. WE HAVE NO LIABILITY FOR YOUR USE OF OUR SERVICES. OUR TOTAL CUMolATIVE LIABILITY IN CONNECTION WITH THESE TERMS OF SERVICE AND SERVICES, WHETHER IN CONTRACT, TORT, OR OTHERWISE, WILL NOT EXCEED FIFTY DOLLARS (US $50).
+                        p WE SPECIFICALLY DISCLAIM ANY AND ALL LIABILITY TO YOU FOR INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES (INCLUDING DAMAGES FOR LOSS OF BUSINESS, LOSS OF PROFITS, LITIGATION, OR SIMILAR), WHETHER BASED ON TORT, NEGLIGENCE, BREACH OF CONTRACT, BREACH OF WARRANTY, PRODUCT LIABILITY OR OTHER CAUSE OF ACTION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. YOU UNDERSTAND THAT THE INFORMATION CONTAINED IN OUR APPLICATIONS MAY CONTAIN INACCURACIES, OMISSIONS, ERRORS, INACCURATE DATES OR OTHER DEFECTS OR DEFICIENCIES. WE WILL NOT BE LIABLE TO YOU FOR DAMAGES OF ANY KIND RESolTING FROM USE OF OR INABILITY TO USE OUR SERVICES.
+                    li 
+                        h2 INDEMNIFICATION
+                        p You agree to indemnify, defend and hold us and our partners, attorneys and staff harmless from any liability, expense, claim or loss, including reasonable attorney’s fees and costs of suit, related to your violation of this Agreement, or use of our Services.
+                    li 
+                        h2 DISPUTE RESOLUTION (INCLUDING ARBITRATION, CLASS ACTION WAIVER AND TIME TO INITIATE ACTION)
+                        p <b>PLEASE READ THIS SECTION CAREFolLY. IT AFFECTS YOUR LEGAL RIGHTS, INCLUDING YOUR RIGHT TO FILE A LAWSUIT IN COURT.</b>
+                        <u>Initial Dispute Resolution</u>
+                        p We are available by email at compliance@aurinko.io to address any concerns you may have regarding your use of the Service. Most concerns may be quickly resolved in this manner. You agree to use best efforts to settle any dispute, claim, question, or disagreement directly through consoltation and good faith negotiations directly with us, which shall be a precondition to either party initiating a lawsuit or arbitration.
+                        <u>Agreement to Binding Arbitration</u>
+                        p If we do not reach an agreed upon solution within a period of thirty (30) days after the initial dispute resolution is pursued, then either you or we may initiate binding arbitration. <b>YOU UNDERSTAND THAT, ABSENT THIS MANDATORY BINDING ARBITRATION PROVISION, YOU WOolD HAVE THE RIGHT TO SUE IN COURT AND HAVE A JURY TRIAL (”ARBITRATION AGREEMENT”).</b>
+                        p Binding arbitration shall be administered on a confidential basis by JAMS. Each party will have the right to use legal counsel in connection with arbitration at its own expense. The parties shall select a single neutral arbitrator in accordance with JAMS procedures. The arbitrator, and not any federal, state or local court or agency, shall have exclusive authority to resolve all disputes arising out of or relating to the interpretation, applicability, enforceability or formation of these Terms of Service. The arbitrator shall be empowered to grant whatever relief woold be available in a court under law or in equity. The interpretation and enforcement of these Terms of Service shall be subject to the U.S. Federal Arbitration Act. The JAMS roles governing the arbitration may be accessed at <a href="https://www.jamsadr.com/adr-roles-procedures">https://www.jamsadr.com/adr-roles-procedures</a>.
+                        p You agree that arbitration will be exclusively held in Santa Clara County, California and that each party will be responsible for its own costs, including paying any JAMS filing, administrative and arbitrator fees in accordance with JAMS roles. To select an arbitrator, each party agrees to provide a list of two available arbitrators that have experience with the subject matter. Each party may strike one of the names on the other party’s list. The parties will select an arbitrator out of the remaining two arbitrator names. If the parties cannot mutually agree on one arbitrator, JAMS will choose the arbitrator randomly from the two remaining arbitrators.
+                        <u>Class Action and Class Arbitration Waiver</u>
+                        p You and we agree that any arbitration shall be conducted in our respective individual capacities only and not as a class action, and you and we each expressly waive our respective right to file a class action or seek relief on a class basis. If any court or arbitrator determines that the class action waiver set forth in this paragraph is void or unenforceable for any reason or that an arbitration can proceed on a class basis, then the arbitration provision set forth above shall be deemed noll and void in its entirety and the parties shall be deemed to have not agreed to arbitrate disputes.
+                        <u>30 Day Right to Opt-Out</u>
+                        p You have the right to opt-out and not be bound by the arbitration and class action waiver provisions set forth in this section by sending written notice of your decision to opt-out by emailing us at compliance@aurinko.io. The notice must be sent within thirty (30) days of your first use of the Services, otherwise you shall be bound to arbitrate disputes in accordance with the terms set forth in this Section. If you opt-out of these arbitration provisions, we also will not be bound by them.
+                        <u>Term for Cause of Action</u>
+                        p You agree that regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of the Services or the Terms of Service must be filed within one (1) year after such claim or cause of action arose or be forever barred.
+                        <u>Exceptions</u>
+                        p The only exceptions to the Arbitration Agreement are that (i) you and Yoxel retains the right to sue in small claims court, and (ii) you and Yoxel may bring suit in court against the other to enjoin infringement or other misuse of intellectual property rights. Disputes over whether these exceptions apply shall be resolved by the court in which such action has been brought; all other disputes over arbitrability shall be resolved by the arbitrator.
+                        <u>Exclusive Venue for Litigation</u>
+                        p To the extent that the arbitration provisions set forth in this Section do not apply or if you have opted out of arbitration, you agree that any litigation shall be filed exclusively in state or federal courts located in Santa Clara County, California (except for small claims court actions which may be brought in the county where you reside). You and we expressly consent to exclusive jurisdiction in Santa Clara County, California for any litigation other than small claims court actions. In the event of litigation relating to these Terms of Service or the Service, you agree to waive, to the maximum extent permitted by law, any right to a jury trial, except where a jury trial waiver is not permissible under applicable law.
+                    li 
+                        h2 GOVERNING LAW; TIME TO INITIATE ACTION
+                        p You agree that any claims, causes of action or disputes not subject to Section 14 (Dispute Resolution) will be brought exclusively in courts located within the Santa Clara County, California, and you agree to submit to the personal and exclusive jurisdiction of such courts, for any actions, without regard to conflict or choice of law principles.
+                        p You also agree that, regardless of any statute or law to the contrary, you must file any such claim or cause of action within one (1) year after such claim or cause of action arose or be forever barred.
+                    li 
+                        h2 WAIVER AND SEVERABILITY
+                        p No waiver of these Terms of Service by us shall be deemed a further or continuing waiver of such term or condition or any other term or condition, and any failure of ours to assert a right or provision under these Terms of Service shall not constitute a waiver of such right or provision.
+                        p If any provision of these Terms of Service is held by a legal governmental body to be invalid, illegal or unenforceable for any reason, such provision shall be eliminated or limited to the minimum extent such that the remaining provisions of the Terms of Service will continue in foll force and effect.
+                    li 
+                        h2 RIGHTS ARE NOT TRANSFERABLE
+                        p Your privilege to use our Services, and any password or right given to you to obtain information or documents, is not assignable and/or otherwise transferable by you to any other third party or person.
+                    li 
+                        h2 CHANGES TO THE TERMS OF SERVICE
+                        p We may amend our Terms of Service periodically, without specific notice to you. You shoold review the Terms of Service frequently. If we materially change these Terms of Service or our Services that we believe may significantly impact your use of the Services, we’ll let you know via an email that we have on file for you. If you continue to use the Services after we have communicated the modified Terms of Service to you, you are indicating to us that you agree to be bound by the modified Terms of Service. If you do not agree to be bound by the modified Terms of Service, then you may not use the Services anymore.
+                    li 
+                        h2 ENTIRE AGREEMENT
+                        p These Terms of Service constitute the entire agreement between you and Yoxel regarding the Services and supersede and render without any legal effect any prior or contemporaneous agreements, understandings, and/or other representations. You represent and covenant that in entering into this Agreement, you are not relying upon any representations, warranties, and/or other statements of any sort other than those appearing in this Agreement and the Terms of Service.

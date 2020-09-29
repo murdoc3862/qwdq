@@ -1,0 +1,255 @@
+//- ====================
+//- aurinko: pricing
+//- 26-07-2020: sashakasha
+//- --------------------
+//- Aurinko Pricing
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'pricing';
+    - var aurinko = true;
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Aurinko Pricing';
+    link(rel="apple-touch-icon" sizes="76x76" href=".././images/favicon/aurinko/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href=".././images/favicon/aurinko/ofavicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href=".././images/favicon/aurinko/favicon-16x16.png")
+    link(rel="manifest" href=".././images/favicon/aurinko/site.webmanifest")
+    link(rel="mask-icon" href=".././images/favicon/aurinko/safari-pinned-tab.svg" color="#5bbad5")
+    meta(name="msapplication-TileColor" content="#ffffff")
+    meta(name="theme-color" content="#ffffff")
+    title Aurinko Pricing
+    meta(name="description" content="Choose and view our pricing plans here.")
+//- Выводим content
+block content
+    include section/accordion.pug
+    include section/table.pug
+    include section/start.pug
+    include section/ui-kit/button.pug
+    include section/ui-kit/icon.pug
+    include section/ui-kit/input.pug
+    include section/ui-kit/list.pug
+    include section/ui-kit/radio.pug
+    include section/ui-kit/title.pug
+    include section/ui-kit/form.pug
+    include section/ui-kit/icon.pug
+    include section/ui-kit/input.pug
+    include section/ui-kit/drop-down.pug
+
+    +b.heading
+        .b-container
+            +e.wrapper
+                +title('h1', 'Aurinko Pricing').--h1.--heading
+
+    +b.pricing
+        .b-container
+            +e.wrapper
+                +b.card.--integrated
+                    +title('h2', 'Integrated Plan').--h2.--integrated
+                    +title('h3', 'Simple, pay-as-you-go pricing. Pay only for what you need for as&nbsp;long as&nbsp;you need&nbsp;it.').--h3.--plan-card
+                    +list({
+                        'items':[{
+                                'content': 'Monthly fee includes a&nbsp;$50 platform fee and a&nbsp;fee for each active account based on&nbsp;the amount of&nbsp;data that is&nbsp;synced through&nbsp;it'
+                            },
+                            {
+                                'content': 'We&nbsp;charge at&nbsp;the end of&nbsp;each month based on&nbsp;your actual usage of&nbsp;the Aurinko API'
+                            },
+                            {
+                                'content': 'No&nbsp;hidden fees and no&nbsp;setup fees'
+                            },
+                            {
+                                'content': 'Includes phone, chat and email support'
+                        }]
+                    })
+
+                +b.card.--custom
+                    +title('h2', 'Custom Plan').--h2.--integrated
+                    +title('h3', 'Our Custom Plan allows you to&nbsp;design a&nbsp;custom package for your business. This plan is&nbsp;designed for large API volumes or&nbsp;unique business models.').--h3.--plan-card
+                    +list({
+                        'items':[{
+                                'content': 'Volume discounts'
+                            },
+                            {
+                                'content': 'Annual contract'
+                            },
+                            {
+                                'content': 'Faster, prioritized support'
+                            },
+                            {
+                                'content': 'Personalized optimizations'
+                        }]
+                    })
+                    +e.buttons.--custom
+                        +button('', true, '/form').--regular.--custom
+                            span Contact us
+
+                +b.calculator
+                    +e.wrapper
+                        +e.buttons
+                            +button('', true, 'javascript:void(0);').--regular.--integrated.js-toogle-calc
+                                span Calculate your monthly fee
+                                +icon('toggle').--button
+                            +button('', true, '/form').--regular.--custom.--desktop
+                                span Contact us
+                        +e.params-wrapper
+                            +e.params
+                                +title('h3', 'Accounts').--h3.--calculator
+                                +e.text
+                                    p For how many accounts do&nbsp;you need the unified API? Also need accounts for account admins.
+                                +input({hz: 'accounts-textfield', type:'number', label:'', name:'accounts', id:'accounts-count', size:4}).--calculator
+                            +e.params
+                                +title('h3', 'Data sync max&nbsp;&mdash; per account').--h3.--calculator
+                                +e.text
+                                    p How much data will go&nbsp;through each account?
+                                +e.data-sync
+                                    +radio('<b>1 GB</b> ($1 per month per account)', 'data-sync', 'data-sync-radiobutton-1gb', true, '', 1).--calculator
+                                    +radio('<b>5 GB</b> ($2&nbsp;per month per account)', 'data-sync', 'data-sync-radiobutton-5gb', false, '', 2).--calculator
+                                    +radio('<b>Unlimited</b> ($3&nbsp;per month per account)', 'data-sync', 'data-sync-radiobutton-unlimited', false, '', 3).--calculator
+                        +e.summary
+                            +e.price
+                                +e.price-current.js-month-calc $0
+                                +e.accounts
+                                    span
+                                        | Per month
+                            +e.user
+                                +e.user--use Users
+                                +e.quantity
+                                    +e.quantity-namber.js-quantity-number x0
+                                    +e.quantity-sum
+                                        span.js-quantity-sum $1&nbsp;
+                                        | per user
+                                    //-span
+                                        //-|(billed at&nbsp;
+                                        //-span(style="display: inline;").js-year-calc $0
+                                        //-| per year)
+                            //-+e.switch
+                                //-+b.switch
+                                    //-+e.wrapper
+                                        //-input(id='switch-1', name='switch', type='radio', checked, value=1)
+                                        //-input(id='switch-2', name='switch', type='radio', value=0.8)
+                                        //-+e('label').label(for='switch-1').--monthly monthly
+                                        //-+e.switch
+                                        //-+e.inner
+                                        //-+e('label').label(for='switch-2').--annual annual
+
+                            +e.rate
+                                +e('span').rate-subtext Platform fee
+                                span.b-calculator__span
+                                    b 
+                                        .b-calculator__span-mark $50 
+                                        //- | per month
+                            +e.summary-buttons
+                                +button('GET STARTED', true, 'https://aurinko.io/login').--color.--calculator
+
+    +b.feature-editions
+        .b-container
+            +e.wrapper
+                +title('h2', 'What is&nbsp;included in&nbsp;every plan').--h2.--feature-editions
+
+                +table('Features', true,
+                        {'items': [{
+                            'feature_name': 'Full Aurinko platform access (calendar, contacts, email and tasks)'
+                        },{
+                            'feature_name': 'Unlimited API calls'
+                        },{
+                            'feature_name': 'Bi-directional sync'
+                        },{
+                            'feature_name': 'Event-based sync'
+                        },{
+                            'feature_name': 'Create, read, modify and delete calendar events, emails and contacts from any integrated service'
+                        },{
+                            'feature_name': 'Push notifications'
+                        },{
+                            'feature_name': 'Attachments sync'
+                        }]
+                })
+
+                +table('Security and Privacy:', '',
+                        {'items': [{
+                            'feature_name': 'Pass through API'
+                        },{
+                            'feature_name': 'Pre-built security'
+                        },{
+                            'feature_name': 'Authentication scopes'
+                        },{
+                            'feature_name': 'Hosted authentication'
+                        },{
+                            'feature_name': 'Data encryption'
+                    }]
+                })
+
+                +table('Scalability:', '',
+                        {'items': [{
+                            'feature_name': 'Webhooks-based API'
+                    }]
+                })
+
+                +table('Customization:', '',
+                        {'items': [{
+                            'feature_name': 'White labeling'
+                    }]
+                })
+
+    +b.questions
+        .b-container
+            +e.wrapper
+                +title('h2', 'Frequently asked questions:').--h2.--questions
+                +accordion({'items': [{
+                            'header': 'Is there a maximum amount of accounts I can connect?',
+                            'content': 'No. You can connect unlimited accounts to the Aurinko platform.',
+                            'akk': '-active'
+                        },{
+                            'header': 'How can I monitor the number of accounts connected to my Aurinko app? ',
+                            'content': 'You can easily see the number of connected accounts in your Aurinko dashboard. Simply click into the Accounts  tab to see your accounts and their respective statuses: Linked, Running, Partial, Stopped. ',
+                        },{
+                            'header': 'Can I just purchase a subscription to just one service (ex. calendar, contacts, tasks or email)?',
+                            'content': 'No. Your subscription covers the full Yoxel platform.  Unbundling our technology would diminish its power and increase complexity with our plans.'
+                        },{
+                            'header': 'Can I purchase extra support for the Integrated plan?',
+                            'content': 'Yes. We do offer additional support packages for our Integrated plans. Please contact us at: sales@aurinko.io for more details.'
+                    }, {
+                            'header': 'Do you offer a free trial?',
+                            'content': 'Yes. Click here to get started. The trial will end once the agreed scope has been completed. You can then either convert to a paid subscription or walk away with no further obligation.'
+                    }], 'class':'js-first-open'
+                })
+
+    +b.wrap-blocks.--form-aurinko.--main
+        +form({action: '/json/mail.php'}).--aurinko.--main.js-validate.js-ajax
+            +title('h3', 'See the power of Aurinko in action!').--h3.--aurinko
+            +e('p').text-aurinko Enter your info below and we&rsquo;ll get back to&nbsp;you shortly.
+            +input({
+                id: 'id-form',
+                type: 'hidden',
+                name: 'form',
+                value: 'Aurinko'
+            })
+            +input({
+                id: 'id-text',
+                type: 'text',
+                name: 'name',
+                text: 'Name'
+            }).--aurinko(required)
+            +input({
+                id: 'id-email',
+                type: 'email',
+                name: 'email',
+                text: 'Work Email Address'
+            }).--aurinko(required)
+            +input({
+                id: 'id-message',
+                type: 'textarea',
+                name: 'message',
+                placeholder: 'Message',
+                textarea: true,
+                text: 'Message'
+            }).--aurinko.--area
+            +input({
+                id: 'id-submit',
+                type: 'submit',
+                name: 'submit',
+                value: 'SUBMIT'
+            }).--submit
